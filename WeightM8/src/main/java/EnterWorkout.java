@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class EnterWorkout extends HttpServlet {
     private static final long serialVersionUID = 1;
 
-    String dns = "ec2-107-21-16-132.compute-1.amazonaws.com";
+    String dns = "ec2-34-201-143-104.compute-1.amazonaws.com";
 
 
     /**
@@ -42,11 +42,14 @@ public class EnterWorkout extends HttpServlet {
         PreparedStatement statement1 = null;
         ResultSet rs = null;
         PreparedStatement preparedStatement = null;
-        String bookTitle = request.getParameter("bookTitle");
-        String bookAuthor = request.getParameter("bookAuthor");
-        String bookGenre = request.getParameter("bookGenre");
-        String bookISBN = request.getParameter("bookISBN");
-        String bookSummary = request.getParameter("bookSummary");
+        String name = request.getParameter("Name");
+        String phone = request.getParameter("Phone");
+        String zip = request.getParameter("Zip");
+        String gym = request.getParameter("Gym");
+        String date = request.getParameter("Date");
+        String time = request.getParameter("Time");
+        String muscleGroup = request.getParameter("MuscleGroup"); 
+
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
@@ -71,7 +74,7 @@ public class EnterWorkout extends HttpServlet {
 
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://" + dns + ":3306/bookShelf", "bakelley", "Jblkel95$$");
+            connection = DriverManager.getConnection("jdbc:mysql://" + dns + ":3306/test", "admin", "admin");
         } catch (SQLException e2) {
             // TODO Auto-generated catch block
             System.out.println("Connection Failed!:\n" + e2.getMessage());
@@ -79,21 +82,26 @@ public class EnterWorkout extends HttpServlet {
         System.out.println("SUCCESS!!!! You made it, take control     your database now!");
         System.out.println("Creating statement...");
 
-        sql = "insert into myTable (title,author,genre,isbn,summary) values(?,?,?,?,?);";
+        sql = "insert into w8m8 (name,phone,zip,gym,date,time,muscleGroup) values(?,?,?,?,?,?,?);";
 
         try {
 
             statement1 = connection.prepareStatement(sql);
-            String theTitle = bookTitle;
-            String theAuthor = bookAuthor;
-            String theGenre = bookGenre;
-            String theISBN = bookISBN;
-            String theSummary = bookSummary;
-            statement1.setString(1, theTitle);
-            statement1.setString(2, theAuthor);
-            statement1.setString(3, theGenre);
-            statement1.setString(4, theISBN);
-            statement1.setString(5, theSummary);
+            String userName = name;
+            String userPhone = phone;
+            String userZip = zip;
+            String theGym = gym;
+            String theDate = date;
+            String theTime = time;
+            String theActivity = muscleGroup; 
+            statement1.setString(1, userName);
+            statement1.setString(2, userPhone);
+            statement1.setString(3, userZip);
+            statement1.setString(4, theGym);
+            statement1.setString(5, theDate);
+            statement1.setString(6, theTime);
+            statement1.setString(7, theActivity);
+            
 
         } catch (SQLException e2) {
             // TODO Auto-generated catch block
@@ -118,5 +126,6 @@ public class EnterWorkout extends HttpServlet {
         // TODO Auto-generated method stub
         doGet(request, response);
     }
+    
 
 }

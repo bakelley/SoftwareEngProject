@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class FindM8 extends HttpServlet {
     private static final long serialVersionUID = 1 ;
 
-    String dns = "ec2-54-84-207-129.compute-1.amazonaws.com";
+    String dns = "ec2-34-201-143-104.compute-1.amazonaws.com";
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -65,7 +65,7 @@ public class FindM8 extends HttpServlet {
         }
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://" + dns + ":3306/w8m8", "bakelley", "Jblkel95$$");
+            connection = DriverManager.getConnection("jdbc:mysql://" + dns + ":3306/test", "admin", "admin");
         } catch (SQLException e2) {
             // TODO Auto-generated catch block
             System.out.println("Connection Failed!:\n" + e2.getMessage());
@@ -73,7 +73,7 @@ public class FindM8 extends HttpServlet {
         System.out.println("SUCCESS!!!! You made it, take control of your database now!");
         System.out.println("Creating statement...");
 
-        sql = "SELECT * FROM weightMate WHERE gym=?";
+        sql = "SELECT * FROM w8m8 WHERE gym=?";
         try {
 
             statement1 = connection.prepareStatement(sql);
