@@ -6,14 +6,16 @@
 </head>
 <body style="background-color:#f8d058;">
 <form action="EnterWorkout" method="post">
-<p>	Name 		<input type="text" name="Name" /></p>
-<p>	Phone 		<input type="text" name="Phone" /></p>
-<p>	ZIP 		<br><input type="text" name="Zip" /></p>
-<p>	GYM			<br><input type="text" name="Gym" /></p>
-<p>	DATE: 		<input type="date" name="Date" /></p>
-<p>	TIME: 		<input type="time" name="Time" /></p>
-<p>	Activity: 	<input type="text" name="MuscleGroup" /></p>
+<p>Please Enter your activity details below</p>
+<p>	NAME 		<input type="text" name="Name" required/></p>
+<p>	PHONE 		<input type="text" name="Phone" required/></p>
+<p>	ZIP 		<br><input type="text" name="Zip" required/></p>
+<p>	GYM			<br><input type="text" name="Gym" required/></p>
+<p>	DATE 		<input type="date" name="Date" required/></p>
+<p>	TIME 		<input type="time" name="Time" required/></p>
+<p>	Activity 	<input type="text" name="MuscleGroup" required/></p>
 <p><input type="submit" /></p>
 </form>
+<p>All fields must be filled out to create an activity</p>
 </body>
 </html>

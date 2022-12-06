@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class FindM8 extends HttpServlet {
     private static final long serialVersionUID = 1 ;
 
-    String dns = "ec2-34-201-143-104.compute-1.amazonaws.com";
+    String dns = "ec2-54-89-167-130.compute-1.amazonaws.com";
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -41,7 +41,7 @@ public class FindM8 extends HttpServlet {
         PreparedStatement statement1 = null;
         ResultSet rs = null;
         PreparedStatement preparedStatement = null;
-        String keyword = request.getParameter("keyword");
+        String keyword = request.getParameter("keyword1");
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
@@ -97,15 +97,15 @@ public class FindM8 extends HttpServlet {
         try {
             while (rs.next()) {
                 //Retrieve by column name
-                String call = rs.getString("activityID");
-                String booktitle = rs.getString("name");
-                String author = rs.getString("phone");
-                String genre = rs.getString("gym");
-                String isbn = rs.getString("date");
-                String summary = rs.getString("time");
+                String ID = rs.getString("activityID");
+                String name = rs.getString("name");
+                String phone = rs.getString("phone");
+                String gym = rs.getString("gym");
+                String date = rs.getString("date");
+                String time = rs.getString("time");
                 String muscleGroup = rs.getString("muscleGroup");
-                out.println("<tr><td>" + call + "</td><td>" + booktitle + "</td><td>" + author + "</td><td>" 
-                + genre + "</td><td>" + isbn +  "</td><td>" + summary +  "</td><td>" + muscleGroup + "</td></tr>");
+                out.println("<tr><td>" + ID + "</td><td>" + name + "</td><td>" + phone + "</td><td>" 
+                + gym + "</td><td>" + date +  "</td><td>" + time +  "</td><td>" + muscleGroup + "</td></tr>");
             }
             out.println("</body></html>");
         } catch (SQLException e) {
