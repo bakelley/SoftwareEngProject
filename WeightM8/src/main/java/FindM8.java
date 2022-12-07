@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class FindM8 extends HttpServlet {
 	private static final long serialVersionUID = 1 ;
 
-	String dns = "ec2-184-72-85-38.compute-1.amazonaws.com";
+	String dns = "ec2-54-242-157-1.compute-1.amazonaws.com";
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -73,8 +73,8 @@ public class FindM8 extends HttpServlet {
 			// TODO Auto-generated catch block
 			System.out.println("Connection Failed!:\n" + e2.getMessage());
 		}
-		System.out.println("SUCCESS!!!! You made it, take control of your database now!");
-		System.out.println("Creating statement...");
+		System.out.println("Database query successful");
+		System.out.println("");
 	
 		
 		
