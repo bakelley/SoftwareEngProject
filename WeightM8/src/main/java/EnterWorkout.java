@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class EnterWorkout extends HttpServlet {
     private static final long serialVersionUID = 1;
 
-    String dns = "ec2-54-89-167-130.compute-1.amazonaws.com";
+    String dns = "ec2-184-72-85-38.compute-1.amazonaws.com";
 
 
     /**
