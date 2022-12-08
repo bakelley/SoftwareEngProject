@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class FindM8 extends HttpServlet {
     private static final long serialVersionUID = 1 ;
 
-    String dns = "ec2-34-201-143-104.compute-1.amazonaws.com";
+    String dns = "ec2-54-89-167-130.compute-1.amazonaws.com";
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -34,7 +34,6 @@ public class FindM8 extends HttpServlet {
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
         String sql;
         Connection connection = null;
         Statement statement = null;
@@ -51,9 +50,19 @@ public class FindM8 extends HttpServlet {
 
         out.println(docType + //
             "<html>\n" + //
-            "<head><title>" + title + "</title></head>\n" + //
-            "<body bgcolor = \"#f8d058\">\n" + //
-            "<h1 align = \"center\">" + title + "</h1>\n");
+            "<head><title>" + title + "</title>"
+            		+ "<link rel=\"stylesheet\" href=\"styles.css\">"
+            		+ "</head>\n" + //
+            "<body>\n" + //
+            "<	<div class=\"title\">Weight Mate</div>\r\n"
+            + "	<header>\r\n"
+            + "		<nav>\r\n"
+            + "			<a href=\"Welcome.html\">Home Page</a>\r\n"
+            + "			<a href=\"LocateWeightMate.html\">Find Mate</a>\r\n"
+            + "			<a href=\"NewWorkout.html\">Create Workout</a>\r\n"
+            + "		</nav>\r\n"
+            + "	</header><br>"
+            + " <div class='content'>");
 
 
         try {
@@ -77,8 +86,8 @@ public class FindM8 extends HttpServlet {
         try {
 
             statement1 = connection.prepareStatement(sql);
-            String theUserName = keyword;
-            statement1.setString(1, theUserName);
+            //String theUserName = keyword;
+            //statement1.setString(1, theUserName);
      
         } catch (SQLException e2) {
             // TODO Auto-generated catch block
@@ -107,7 +116,7 @@ public class FindM8 extends HttpServlet {
                 out.println("<tr><td>" + call + "</td><td>" + booktitle + "</td><td>" + author + "</td><td>" 
                 + genre + "</td><td>" + isbn +  "</td><td>" + summary +  "</td><td>" + muscleGroup + "</td></tr>");
             }
-            out.println("</body></html>");
+            out.println("</div></body></html>");
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

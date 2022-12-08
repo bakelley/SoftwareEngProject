@@ -3,17 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>New Workout</title>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body style="background-color:#f8d058;">
-<form action="EnterWorkout" method="post">
-<p>	Name 		<input type="text" name="Name" /></p>
-<p>	Phone 		<input type="text" name="Phone" /></p>
-<p>	ZIP 		<br><input type="text" name="Zip" /></p>
-<p>	GYM			<br><input type="text" name="Gym" /></p>
-<p>	DATE: 		<input type="date" name="Date" /></p>
-<p>	TIME: 		<input type="time" name="Time" /></p>
-<p>	Activity: 	<input type="text" name="MuscleGroup" /></p>
-<p><input type="submit" /></p>
-</form>
+<body>
+	<div class="title">Weight Mate</div>
+	<header>
+		<nav>
+			<a href="Welcome.html">Home Page</a>
+			<a href="LocateWeightMate.html">Find Mate</a>
+			<a href="NewWorkout.html">Create Workout</a>
+		</nav>
+	</header><br>
+	<div class="content">
+		<form action="EnterWorkout" method="post">
+			<label>Name</label><br><input type="text" name="Name"/><br>
+			<label>Phone Number</label><br><input type="tel" name="Phone"/><br>
+			<label>Zip Code</label><br><input id="zip" name="zip" type="text"><br>
+			<label>Gym</label><br><input type="text" name="Gym" /><br>
+			<label>Date</label><br><input type="date" name="Date" /><br>
+			<label>Time</label><br><input type="time" name="Time" /><br>
+			<label>Activity</label><br><input type="text" name="MuscleGroup" /><br>
+			<input type="submit" />
+		</form>
+	</div>
 </body>
 </html>

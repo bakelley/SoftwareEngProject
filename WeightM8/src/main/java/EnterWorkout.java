@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class EnterWorkout extends HttpServlet {
     private static final long serialVersionUID = 1;
 
-    String dns = "ec2-34-201-143-104.compute-1.amazonaws.com";
+    String dns = "ec2-54-89-167-130.compute-1.amazonaws.com";
 
 
     /**
@@ -48,20 +48,31 @@ public class EnterWorkout extends HttpServlet {
         String gym = request.getParameter("Gym");
         String date = request.getParameter("Date");
         String time = request.getParameter("Time");
-        String muscleGroup = request.getParameter("MuscleGroup"); 
+        String muscleGroup = request.getParameter("MuscleGroup");
 
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
-        String title = "Insert Book Into Database";
+        String title = "Create Workout";
         String docType =
             "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
 
         out.println(docType + //
             "<html>\n" + //
-            "<head><title>" + title + "</title></head>\n" + //
-            "<body bgcolor = \"#f8d058\">\n" + //
-            "<h1 align = \"center\">" + title + "</h1>\n");
+            "<head><title>" + title + "</title>"
+            		+ "<link rel=\"stylesheet\" href=\"styles.css\">"
+            		+ "</head>\n"
+            		+ "<body>\n"
+            		+ "	<div class=\"title\">Weight Mate</div>\r\n"
+            		+ "	<header>\r\n"
+            		+ "		<nav>\r\n"
+            		+ "			<a href=\"Welcome.html\">Home Page</a>\r\n"
+            		+ "			<a href=\"LocateWeightMate.html\">Find Mate</a>\r\n"
+            		+ "			<a href=\"NewWorkout.html\">Create Workout</a>\r\n"
+            		+ "		</nav>\r\n"
+            		+ "	</header><br>"
+                    + "<div class='content'>"
+            		+ "<h1>" + title + "</h1>\n");
 
 
         try {
@@ -76,7 +87,6 @@ public class EnterWorkout extends HttpServlet {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://" + dns + ":3306/test", "admin", "admin");
         } catch (SQLException e2) {
-            // TODO Auto-generated catch block
             System.out.println("Connection Failed!:\n" + e2.getMessage());
         }
         System.out.println("SUCCESS!!!! You made it, take control     your database now!");
@@ -104,7 +114,6 @@ public class EnterWorkout extends HttpServlet {
             
 
         } catch (SQLException e2) {
-            // TODO Auto-generated catch block
             e2.printStackTrace();
         }
 
@@ -112,18 +121,16 @@ public class EnterWorkout extends HttpServlet {
 
             statement1.executeUpdate();
         } catch (SQLException e1) {
-            // TODO Auto-generated catch block
             e1.printStackTrace();
         }
         out.println("Thank you for registering your details");
-        out.println("</body></html>");
+        out.println("</div></body></html>");
     }
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
         doGet(request, response);
     }
     
