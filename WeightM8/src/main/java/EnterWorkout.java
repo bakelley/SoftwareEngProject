@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class EnterWorkout extends HttpServlet {
     private static final long serialVersionUID = 1;
 
-    String dns = "ec2-54-89-167-130.compute-1.amazonaws.com";
+    String dns = "ec2-54-242-157-1.compute-1.amazonaws.com";
 
 
     /**
@@ -48,12 +48,12 @@ public class EnterWorkout extends HttpServlet {
         String gym = request.getParameter("Gym");
         String date = request.getParameter("Date");
         String time = request.getParameter("Time");
-        String muscleGroup = request.getParameter("MuscleGroup");
+        String muscleGroup = request.getParameter("MuscleGroup"); 
 
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
-        String title = "Create Workout";
+        String title = "Activity Posted!";
         String docType =
             "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
 
@@ -89,8 +89,8 @@ public class EnterWorkout extends HttpServlet {
         } catch (SQLException e2) {
             System.out.println("Connection Failed!:\n" + e2.getMessage());
         }
-        System.out.println("SUCCESS!!!! You made it, take control     your database now!");
-        System.out.println("Creating statement...");
+        System.out.println("Database entry successful");
+		System.out.println("");
 
         sql = "insert into w8m8 (name,phone,zip,gym,date,time,muscleGroup) values(?,?,?,?,?,?,?);";
 
@@ -123,7 +123,10 @@ public class EnterWorkout extends HttpServlet {
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
-        out.println("Thank you for registering your details");
+        out.println("Thank you. Your activity has been posted");
+        out.println("<p> </p>");
+        out.println("<p>Post another workout<br><a href=\"NewWorkout.html\"><button>Post Workout</button></a></p>");
+        out.println("<p></p><p>Search for Workouts to Join<br><a href=\"LocateWeightMate.html\"><button>Find Workout</button></a></p>");
         out.println("</div></body></html>");
     }
 

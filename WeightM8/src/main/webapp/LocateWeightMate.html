@@ -14,11 +14,35 @@
 			<a href="NewWorkout.html">Create Workout</a>
 		</nav>
 	</header><br>
-	<div class="content">
-		<form action="FindM8" method="post">
-			<p> SEARCH BY GYM: <input type="text" name="keyword" /></p>
-			<p><input type="submit" /></p>
-		</form>
-	</div>
+    <div class="content">
+        <form action="FindM8" method="post" id="searchForm">
+            <p>Search By:</p>
+                *Gym: <select name="Gym" id="Gym" form="searchForm" required>
+                <option value="none" selected disabled>Select Gym</option>
+                <option value="YMCA">YMCA</option>
+                <option value="Anytime Fitness">Anytime Fitness</option>
+                <option value="Planet Fitness">Planet Fitness</option>
+                <option value="Orange Theory">Orange Theory</option>
+                <option value="24 Hour Fitness">24 Hour Fitness</option>
+                <option value="Life Time Fitness">Life Time Fitness</option>
+                </select>
+                <br><br>
+                *Activity: <select name="Activity" id="Activity" form="searchForm" required>
+                <option value="none" selected disabled>Select Activity</option>
+                <option value="Legs">Legs</option>
+                <option value="Chest">Chest</option>
+                <option value="Back">Back</option>
+                <option value="Cardio">Cardio</option>
+                <option value="Arms">Arms</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Calisthenics">Calisthenics</option>
+                </select>
+                <br><br>
+            <p> Date: <input type="date" name="Date"/></p>
+            <p> Time: <input type="time" name="Time" /></p>
+            <p><input type="submit" value="Search"/></p>
+        </form>
+    <p>Fields marked with * are required to be filled out</p>
+    </div>
 </body>
 </html>

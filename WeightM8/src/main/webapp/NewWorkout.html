@@ -15,16 +15,37 @@
 		</nav>
 	</header><br>
 	<div class="content">
-		<form action="EnterWorkout" method="post">
-			<label>Name</label><br><input type="text" name="Name"/><br>
-			<label>Phone Number</label><br><input type="tel" name="Phone"/><br>
-			<label>Zip Code</label><br><input id="zip" name="zip" type="text"><br>
-			<label>Gym</label><br><input type="text" name="Gym" /><br>
-			<label>Date</label><br><input type="date" name="Date" /><br>
-			<label>Time</label><br><input type="time" name="Time" /><br>
-			<label>Activity</label><br><input type="text" name="MuscleGroup" /><br>
-			<input type="submit" />
-		</form>
-	</div>
+        <form action="EnterWorkout" method="post" id="enterForm">
+            <p>Please Enter your activity details below</p>
+            <p>	NAME 		<input type="text" name="Name" required/></p>
+            <p>	PHONE 		<input type="text" name="Phone" required/></p>
+            <p>	ZIP 		<br><input type="text" name="Zip" required/></p>
+                Gym: <select name="Gym" id="Gym" form="enterForm" required>
+                <option value="none" selected disabled>Select Gym</option>
+                <option value="YMCA">YMCA</option>
+                <option value="Anytime Fitness">Anytime Fitness</option>
+                <option value="Planet Fitness">Planet Fitness</option>
+                <option value="Orange Theory">Orange Theory</option>
+                <option value="24 Hour Fitness">24 Hour Fitness</option>
+                <option value="Life Time Fitness">Life Time Fitness</option>
+                </select>
+                <br><br>
+                Activity: <select name="MuscleGroup" id="MuscleGroup" form="enterForm" required>
+                <option value="none" selected disabled>Select Activity</option>
+                <option value="Legs">Legs</option>
+                <option value="Chest">Chest</option>
+                <option value="Back">Back</option>
+                <option value="Cardio">Cardio</option>
+                <option value="Arms">Arms</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Calisthenics">Calisthenics</option>
+                </select>
+                <br><br>
+                <p>	DATE 		<input type="date" name="Date" required/></p>
+                <p>	TIME 		<input type="time" name="Time" required/></p>
+            <p><input type="submit" /></p>
+        </form>
+    <p>All fields must be filled out to create an activity</p>
+    </div>
 </body>
 </html>
