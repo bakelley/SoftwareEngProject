@@ -16,8 +16,9 @@
 	</header><br>
     <div class="content">
         <form action="FindM8" method="post" id="searchForm">
+        <h1>Find Mate</h1>
             <p>Search By:</p>
-                *Gym: <select name="Gym" id="Gym" form="searchForm" required>
+               	<label>*Gym:</label><br><select name="Gym" id="Gym" form="searchForm" required>
                 <option value="none" selected disabled>Select Gym</option>
                 <option value="YMCA">YMCA</option>
                 <option value="Anytime Fitness">Anytime Fitness</option>
@@ -27,7 +28,7 @@
                 <option value="Life Time Fitness">Life Time Fitness</option>
                 </select>
                 <br><br>
-                *Activity: <select name="Activity" id="Activity" form="searchForm" required>
+                <label>*Activity:</label><br><select name="Activity" id="Activity" form="searchForm" required>
                 <option value="none" selected disabled>Select Activity</option>
                 <option value="Legs">Legs</option>
                 <option value="Chest">Chest</option>
@@ -38,11 +39,12 @@
                 <option value="Calisthenics">Calisthenics</option>
                 </select>
                 <br><br>
-            <p> Date: <input type="date" name="Date" id="date"/></p>
-            <p> Time: <input type="time" name="Time" id="time"/></p>
-            <p><input type="submit" value="Search"/></p>
+            	<label>Date:</label><br><input type="date" name="Date" id="date"/><br><br>
+            	<label>Time:</label><br><input type="time" name="Time" id="time"/><br><br>
+            	<input type="submit" value="Search"/>
         </form>
-    <p>Fields marked with * are required to be filled out</p>
+    	<p>Fields marked with * are required to be filled out</p>
+        <div class="footer">Weight Mate 2022</div>
     </div>
 </body>
 </html>

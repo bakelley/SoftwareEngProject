@@ -127,7 +127,8 @@ public class EnterWorkout extends HttpServlet {
         out.println("<p> </p>");
         out.println("<p>Post another workout<br><a href=\"NewWorkout.html\"><button>Post Workout</button></a></p>");
         out.println("<p></p><p>Search for Workouts to Join<br><a href=\"LocateWeightMate.html\"><button>Find Workout</button></a></p>");
-        out.println("</div></body></html>");
+        out.println("<div class='footer'>Weight Mate 2022</div>"
+        		+ "</div></body></html>");
     }
 
     /**

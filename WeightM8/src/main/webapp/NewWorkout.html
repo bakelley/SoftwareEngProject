@@ -15,12 +15,13 @@
 		</nav>
 	</header><br>
 	<div class="content">
+	        <h1>Create Workout</h1>
         <form action="EnterWorkout" method="post" id="enterForm">
             <p>Please Enter your activity details below</p>
-            <p>	NAME 		<input type="text" name="Name" id="name" required/></p>
-            <p>	PHONE 		<input type="text" name="Phone" id="phone" required/></p>
-            <p>	ZIP 		<br><input type="text" name="Zip" id="zip" required/></p>
-                Gym: <select name="Gym" id="Gym" form="enterForm" required>
+            <label>Name</label><br><input type="text" name="Name" id="name" required/><br><br>
+            <label>Phone Number</label><br><input type="text" name="Phone" id="phone" required/><br><br>
+            <label>Zip Code</label><br><input type="text" name="Zip" id="zip" required/><br><br>
+            <label>Gym:</label><br><select name="Gym" id="Gym" form="enterForm" required>
                 <option value="none" selected disabled>Select Gym</option>
                 <option value="YMCA">YMCA</option>
                 <option value="Anytime Fitness">Anytime Fitness</option>
@@ -30,7 +31,7 @@
                 <option value="Life Time Fitness">Life Time Fitness</option>
                 </select>
                 <br><br>
-                Activity: <select name="MuscleGroup" id="MuscleGroup" form="enterForm" required>
+           <label>Activity:</label><br><select name="MuscleGroup" id="MuscleGroup" form="enterForm" required>
                 <option value="none" selected disabled>Select Activity</option>
                 <option value="Legs">Legs</option>
                 <option value="Chest">Chest</option>
@@ -41,11 +42,12 @@
                 <option value="Calisthenics">Calisthenics</option>
                 </select>
                 <br><br>
-                <p>	DATE 		<input type="date" name="Date" id="date" required/></p>
-                <p>	TIME 		<input type="time" name="Time" id="time" required/></p>
+                <label>Date</label><br><input type="date" name="Date" id="date" required/><br><br>
+                <label>Time</label><br><input type="time" name="Time" id="time" required/><br><br>
             <p><input type="submit" id="submit"/></p>
         </form>
-    <p>All fields must be filled out to create an activity</p>
+        <p>All fields must be filled out to create an activity</p>
+        <div class="footer">Weight Mate 2022</div>
     </div>
 </body>
 </html>

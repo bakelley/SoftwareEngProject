@@ -195,7 +195,9 @@ public class FindM8 extends HttpServlet {
 	        out.println("<p> </p>");
 	        out.println("<p>Post a workout<br><a href=\"NewWorkout.html\"><button>Post Workout</button></a></p>");
 	        out.println("<p>Or</p>");
-	        out.println("<p></p><p>Search again<br><a href=\"LocateWeightMate.html\"><button>Find Workout</button></a></p>");
+	        out.println("<p></p><p>Search again<br><a href=\"LocateWeightMate.html\"><button>Find Workout</button></a></p>"
+	        		+ "    <div class='footer'>Weight Mate 2022</div>"
+	        		+ "</div>");
 			out.println("</body></html>");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
