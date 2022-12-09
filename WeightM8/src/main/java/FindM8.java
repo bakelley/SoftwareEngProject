@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class FindM8 extends HttpServlet {
 	private static final long serialVersionUID = 1 ;
 
-	String dns = "ec2-54-242-157-1.compute-1.amazonaws.com";
+	String dns = "ec2-34-229-76-26.compute-1.amazonaws.com";
 
 	/**
 	 * @see HttpServlet#HttpServlet()
