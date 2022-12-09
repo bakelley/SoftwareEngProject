@@ -17,9 +17,9 @@
 	<div class="content">
         <form action="EnterWorkout" method="post" id="enterForm">
             <p>Please Enter your activity details below</p>
-            <p>	NAME 		<input type="text" name="Name" required/></p>
-            <p>	PHONE 		<input type="text" name="Phone" required/></p>
-            <p>	ZIP 		<br><input type="text" name="Zip" required/></p>
+            <p>	NAME 		<input type="text" name="Name" id="name" required/></p>
+            <p>	PHONE 		<input type="text" name="Phone" id="phone" required/></p>
+            <p>	ZIP 		<br><input type="text" name="Zip" id="zip" required/></p>
                 Gym: <select name="Gym" id="Gym" form="enterForm" required>
                 <option value="none" selected disabled>Select Gym</option>
                 <option value="YMCA">YMCA</option>
@@ -41,9 +41,9 @@
                 <option value="Calisthenics">Calisthenics</option>
                 </select>
                 <br><br>
-                <p>	DATE 		<input type="date" name="Date" required/></p>
-                <p>	TIME 		<input type="time" name="Time" required/></p>
-            <p><input type="submit" /></p>
+                <p>	DATE 		<input type="date" name="Date" id="date" required/></p>
+                <p>	TIME 		<input type="time" name="Time" id="time" required/></p>
+            <p><input type="submit" id="submit"/></p>
         </form>
     <p>All fields must be filled out to create an activity</p>
     </div>
