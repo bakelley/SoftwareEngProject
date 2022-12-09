@@ -86,88 +86,30 @@ public class FindM8 extends HttpServlet {
 		System.out.println("Database query successful");
 		System.out.println("");
 
+		sql = FilterSearch.setSQL(gym, activity, date, time); 
+		int numSearchTerms = FilterSearch.getSearchTerms(date, time); 
+	
+		String[] terms = {gym, activity, date, time};
 
+		try {
 
-
-
-		//Logic to process fields searched by user
-		if(date == "" && time == "")//if user only enters gym and activity
-		{
-			sql = "SELECT * FROM w8m8 WHERE gym=? AND muscleGroup=?;";
-			try {
-
-				statement1 = connection.prepareStatement(sql);
-				String searchedGym = gym;
-				String seachedActivity = activity;
-				statement1.setString(1, searchedGym);
-				statement1.setString(2, seachedActivity);
-
-			} catch (SQLException e2) {
-				// TODO Auto-generated catch block
-				e2.printStackTrace();
+			statement1 = connection.prepareStatement(sql);
+			for(int i = 1; i <= numSearchTerms; i++)
+			{
+				if(terms[i-1]!= "")
+				{		
+					statement1.setString(i, terms[i-1]);
+				}
+				else
+				{
+					statement1.setString(i, terms[i]); 
+				}
 			}
+
+		} catch (SQLException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
 		}
-		else if(date == "" && time != "")//if user enters gym, activity, and time
-		{
-			sql = "SELECT * FROM w8m8 WHERE gym=? AND muscleGroup=? AND time=?";
-			try {
-
-				statement1 = connection.prepareStatement(sql);
-				String searchedGym = gym;
-				String seachedActivity = activity;
-				String searchedTime = time;
-				statement1.setString(1, searchedGym);
-				statement1.setString(2, seachedActivity);
-				statement1.setString(3, searchedTime);
-
-			} catch (SQLException e2) {
-				// TODO Auto-generated catch block
-				e2.printStackTrace();
-			}
-		}
-		else if(date != "" && time == "")//if user enters gym, activity, and date
-		{
-			sql = "SELECT * FROM w8m8 WHERE gym=? AND muscleGroup=? AND date=?";
-			try {
-
-				statement1 = connection.prepareStatement(sql);
-				String searchedGym = gym;
-				String seachedActivity = activity;
-				String searchedDate = date;
-				statement1.setString(1, searchedGym);
-				statement1.setString(2, seachedActivity);
-				statement1.setString(3, searchedDate);
-
-
-
-			} catch (SQLException e2) {
-				// TODO Auto-generated catch block
-				e2.printStackTrace();
-			}
-		}
-		else if(date != "" && time != "")//user enters date, time, gym, and activity
-		{
-			sql = "SELECT * FROM w8m8 WHERE gym=? AND muscleGroup=? AND date=? AND time=?";
-			try {
-
-				statement1 = connection.prepareStatement(sql);
-
-				String searchedGym = gym;
-				String seachedActivity = activity;
-				String searchedDate = date;
-				String searchedTime = time;
-				statement1.setString(1, searchedGym);
-				statement1.setString(2, seachedActivity);
-				statement1.setString(3, searchedDate);
-				statement1.setString(4, searchedTime);
-
-
-			} catch (SQLException e2) {
-				// TODO Auto-generated catch block
-				e2.printStackTrace();
-			}
-		}
-
 
 		try {
 
