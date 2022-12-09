@@ -59,9 +59,20 @@ public class EnterWorkout extends HttpServlet {
 
         out.println(docType + //
             "<html>\n" + //
-            "<head><title>" + title + "</title></head>\n" + //
-            "<body bgcolor = \"#f8d058\">\n" + //
-            "<h1 align = \"center\">" + title + "</h1>\n");
+            "<head><title>" + title + "</title>"
+            		+ "<link rel=\"stylesheet\" href=\"styles.css\">"
+            		+ "</head>\n"
+            		+ "<body>\n"
+            		+ "	<div class=\"title\">Weight Mate</div>\r\n"
+            		+ "	<header>\r\n"
+            		+ "		<nav>\r\n"
+            		+ "			<a href=\"Welcome.html\">Home Page</a>\r\n"
+            		+ "			<a href=\"LocateWeightMate.html\">Find Mate</a>\r\n"
+            		+ "			<a href=\"NewWorkout.html\">Create Workout</a>\r\n"
+            		+ "		</nav>\r\n"
+            		+ "	</header><br>"
+                    + "<div class='content'>"
+            		+ "<h1>" + title + "</h1>\n");
 
 
         try {
@@ -76,11 +87,10 @@ public class EnterWorkout extends HttpServlet {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://" + dns + ":3306/test", "admin", "admin");
         } catch (SQLException e2) {
-            // TODO Auto-generated catch block
             System.out.println("Connection Failed!:\n" + e2.getMessage());
         }
         System.out.println("Database entry successful");
-		System.out.println(""); 
+		System.out.println("");
 
         sql = "insert into w8m8 (name,phone,zip,gym,date,time,muscleGroup) values(?,?,?,?,?,?,?);";
 
@@ -104,7 +114,6 @@ public class EnterWorkout extends HttpServlet {
             
 
         } catch (SQLException e2) {
-            // TODO Auto-generated catch block
             e2.printStackTrace();
         }
 
@@ -112,22 +121,20 @@ public class EnterWorkout extends HttpServlet {
 
             statement1.executeUpdate();
         } catch (SQLException e1) {
-            // TODO Auto-generated catch block
             e1.printStackTrace();
         }
         out.println("Thank you. Your activity has been posted");
         out.println("<p> </p>");
         out.println("<p>Post another workout<br><a href=\"NewWorkout.html\"><button>Post Workout</button></a></p>");
         out.println("<p></p><p>Search for Workouts to Join<br><a href=\"LocateWeightMate.html\"><button>Find Workout</button></a></p>");
-        out.println("</body></html>");
-        
+        out.println("<div class='footer'>Weight Mate 2022</div>"
+        		+ "</div></body></html>");
     }
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
         doGet(request, response);
     }
     

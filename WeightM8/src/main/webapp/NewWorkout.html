@@ -3,38 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <title>New Workout</title>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body style="background-color:#f8d058;">
-<form action="EnterWorkout" method="post" id="enterForm">
-<p>Please Enter your activity details below</p>
-<p>	NAME 		<input type="text" name="Name" required/></p>
-<p>	PHONE 		<input type="text" name="Phone" required/></p>
-<p>	ZIP 		<br><input type="text" name="Zip" required/></p>
-	Gym: <select name="Gym" id="Gym" form="enterForm" required>
-	<option value="none" selected disabled>Select Gym</option>
-    <option value="YMCA">YMCA</option>
-    <option value="Anytime Fitness">Anytime Fitness</option>
-    <option value="Planet Fitness">Planet Fitness</option>
-    <option value="Orange Theory">Orange Theory</option>
-    <option value="24 Hour Fitness">24 Hour Fitness</option>
-    <option value="Life Time Fitness">Life Time Fitness</option>
-  	</select>
-	<br><br>
-	Activity: <select name="MuscleGroup" id="MuscleGroup" form="enterForm" required>
-	<option value="none" selected disabled>Select Activity</option>
-	<option value="Legs">Legs</option>
-	<option value="Chest">Chest</option>
-	<option value="Back">Back</option>
-	<option value="Cardio">Cardio</option>
-	<option value="Arms">Arms</option>
-	<option value="Yoga">Yoga</option>
-	<option value="Calisthenics">Calisthenics</option>
-	</select>
-	<br><br>
-	<p>	DATE 		<input type="date" name="Date" required/></p>
-	<p>	TIME 		<input type="time" name="Time" required/></p>
-<p><input type="submit" /></p>
-</form>
-<p>All fields must be filled out to create an activity</p>
+<body>
+	<div class="title">Weight Mate</div>
+	<header>
+		<nav>
+			<a href="Welcome.html">Home Page</a>
+			<a href="LocateWeightMate.html">Find Mate</a>
+			<a href="NewWorkout.html">Create Workout</a>
+		</nav>
+	</header><br>
+	<div class="content">
+	        <h1>Create Workout</h1>
+        <form action="EnterWorkout" method="post" id="enterForm">
+            <p>Please Enter your activity details below</p>
+            <label>Name</label><br><input type="text" name="Name" id="name" required/><br><br>
+            <label>Phone Number</label><br><input type="text" name="Phone" id="phone" required/><br><br>
+            <label>Zip Code</label><br><input type="text" name="Zip" id="zip" required/><br><br>
+            <label>Gym:</label><br><select name="Gym" id="Gym" form="enterForm" required>
+                <option value="none" selected disabled>Select Gym</option>
+                <option value="YMCA">YMCA</option>
+                <option value="Anytime Fitness">Anytime Fitness</option>
+                <option value="Planet Fitness">Planet Fitness</option>
+                <option value="Orange Theory">Orange Theory</option>
+                <option value="24 Hour Fitness">24 Hour Fitness</option>
+                <option value="Life Time Fitness">Life Time Fitness</option>
+                </select>
+                <br><br>
+           <label>Activity:</label><br><select name="MuscleGroup" id="MuscleGroup" form="enterForm" required>
+                <option value="none" selected disabled>Select Activity</option>
+                <option value="Legs">Legs</option>
+                <option value="Chest">Chest</option>
+                <option value="Back">Back</option>
+                <option value="Cardio">Cardio</option>
+                <option value="Arms">Arms</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Calisthenics">Calisthenics</option>
+                </select>
+                <br><br>
+                <label>Date</label><br><input type="date" name="Date" id="date" required/><br><br>
+                <label>Time</label><br><input type="time" name="Time" id="time" required/><br><br>
+            <p><input type="submit" id="submit"/></p>
+        </form>
+        <p>All fields must be filled out to create an activity</p>
+        <div class="footer">Weight Mate 2022</div>
+    </div>
 </body>
 </html>

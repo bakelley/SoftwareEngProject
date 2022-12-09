@@ -52,11 +52,21 @@ public class FindM8 extends HttpServlet {
 		String docType =
 				"<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
 
-		out.println(docType + //
-				"<html>\n" + //
-				"<head><title>" + title + "</title></head>\n" + //
-				"<body bgcolor = \"#f8d058\">\n" + //
-				"<h1 align = \"center\">" + title + "</h1>\n");
+        out.println(docType + //
+            "<html>\n" + //
+            "<head><title>" + title + "</title>"
+            		+ "<link rel=\"stylesheet\" href=\"styles.css\">"
+            		+ "</head>\n" + //
+            "<body>\n" + //
+            "<	<div class=\"title\">Weight Mate</div>\r\n"
+            + "	<header>\r\n"
+            + "		<nav>\r\n"
+            + "			<a href=\"Welcome.html\">Home Page</a>\r\n"
+            + "			<a href=\"LocateWeightMate.html\">Find Mate</a>\r\n"
+            + "			<a href=\"NewWorkout.html\">Create Workout</a>\r\n"
+            + "		</nav>\r\n"
+            + "	</header><br>"
+            + " <div class='content'>");
 
 
 		try {
@@ -75,11 +85,11 @@ public class FindM8 extends HttpServlet {
 		}
 		System.out.println("Database query successful");
 		System.out.println("");
-	
-		
-		
-		
-		
+
+
+
+
+
 		//Logic to process fields searched by user
 		if(date == "" && time == "")//if user only enters gym and activity
 		{
@@ -90,7 +100,7 @@ public class FindM8 extends HttpServlet {
 				String searchedGym = gym;
 				String seachedActivity = activity;
 				statement1.setString(1, searchedGym);
-				statement1.setString(2, seachedActivity);  
+				statement1.setString(2, seachedActivity);
 
 			} catch (SQLException e2) {
 				// TODO Auto-generated catch block
@@ -107,8 +117,8 @@ public class FindM8 extends HttpServlet {
 				String seachedActivity = activity;
 				String searchedTime = time;
 				statement1.setString(1, searchedGym);
-				statement1.setString(2, seachedActivity); 
-				statement1.setString(3, searchedTime); 
+				statement1.setString(2, seachedActivity);
+				statement1.setString(3, searchedTime);
 
 			} catch (SQLException e2) {
 				// TODO Auto-generated catch block
@@ -124,11 +134,11 @@ public class FindM8 extends HttpServlet {
 				String searchedGym = gym;
 				String seachedActivity = activity;
 				String searchedDate = date;
-				statement1.setString(1, searchedGym); 
-				statement1.setString(2, seachedActivity); 
+				statement1.setString(1, searchedGym);
+				statement1.setString(2, seachedActivity);
 				statement1.setString(3, searchedDate);
-				
-				
+
+
 
 			} catch (SQLException e2) {
 				// TODO Auto-generated catch block
@@ -141,16 +151,16 @@ public class FindM8 extends HttpServlet {
 			try {
 
 				statement1 = connection.prepareStatement(sql);
-				
+
 				String searchedGym = gym;
 				String seachedActivity = activity;
 				String searchedDate = date;
-				String searchedTime = time;	
-				statement1.setString(1, searchedGym); 
-				statement1.setString(2, seachedActivity); 
+				String searchedTime = time;
+				statement1.setString(1, searchedGym);
+				statement1.setString(2, seachedActivity);
 				statement1.setString(3, searchedDate);
 				statement1.setString(4, searchedTime);
-				
+
 
 			} catch (SQLException e2) {
 				// TODO Auto-generated catch block
@@ -178,14 +188,16 @@ public class FindM8 extends HttpServlet {
 				String theDate = rs.getString("date");
 				String theTime = rs.getString("time");
 				String muscleGroup = rs.getString("muscleGroup");
-				out.println("<tr><td>" + ID + "</td><td>" + name + "</td><td>" + phone + "</td><td>" 
+				out.println("<tr><td>" + ID + "</td><td>" + name + "</td><td>" + phone + "</td><td>"
 						+ theGym + "</td><td>" + theDate +  "</td><td>" + theTime +  "</td><td>" + muscleGroup + "</td></tr>");
 			}
 	        out.println("<p> </p>");
 	        out.println("<p> </p>");
 	        out.println("<p>Post a workout<br><a href=\"NewWorkout.html\"><button>Post Workout</button></a></p>");
 	        out.println("<p>Or</p>");
-	        out.println("<p></p><p>Search again<br><a href=\"LocateWeightMate.html\"><button>Find Workout</button></a></p>");
+	        out.println("<p></p><p>Search again<br><a href=\"LocateWeightMate.html\"><button>Find Workout</button></a></p>"
+	        		+ "    <div class='footer'>Weight Mate 2022</div>"
+	        		+ "</div>");
 			out.println("</body></html>");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
