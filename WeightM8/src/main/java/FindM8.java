@@ -86,7 +86,7 @@ public class FindM8 extends HttpServlet {
 		System.out.println("Database query successful");
 		System.out.println("");
 
-		sql = FilterSearch.setSQL(gym, activity, date, time); 
+		sql = FilterSearch.setSQL(date, time); 
 		int numSearchTerms = FilterSearch.getSearchTerms(date, time); 
 	
 		String[] terms = {gym, activity, date, time};

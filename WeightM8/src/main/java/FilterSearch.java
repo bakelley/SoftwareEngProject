@@ -2,7 +2,7 @@
 public class FilterSearch {
 
 
-	public static String setSQL(String gym, String activity, String date, String time) 
+	public static String setSQL(String date, String time) 
 	{
 		String sql = ""; 
 		//Logic to process fields searched by user
